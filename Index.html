@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Perdóname 💖</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #ffe6f0;
+    margin-top: 100px;
+    overflow: hidden;
+  }
+
+  h1 {
+    color: #ff4d88;
+  }
+
+  button {
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  #si {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  #no {
+    background-color: #ff4d4d;
+    color: white;
+    position: relative;
+  }
+
+  #mensaje {
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 20px;
+    white-space: pre-line;
+  }
+</style>
+</head>
+
+<body>
+
+<h1 id="texto">Samantha... ¿me perdonas? 💕</h1>
+
+<button id="si">Shi 💖</button>
+<button id="no">No 😡</button>
+
+<p id="mensaje"></p>
+
+<audio id="audio" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let intentos = 0;
+
+document.getElementById("no").addEventListener("click", function() {
+  intentos++;
+
+  if (intentos < 3) {
+    document.getElementById("mensaje").innerText = "😢 Dale mi bebita...";
+  } 
+  else if (intentos < 6) {
+    document.getElementById("mensaje").innerText = "🥺 Perdón en serio mi princesita...";
+  } 
+  else {
+    document.getElementById("mensaje").innerText = "cállate, ya no podes decir que no";
+
+    let btn = document.getElementById("no");
+    btn.style.position = "absolute";
+    btn.style.top = Math.random() * window.innerHeight + "px";
+    btn.style.left = Math.random() * window.innerWidth + "px";
+  }
+});
+
+document.getElementById("si").addEventListener("click", function() {
+  document.getElementById("texto").innerText = "💖 Tenia que enojarte un poco, te amuu 💖";
+  document.getElementById("mensaje").innerText = `sabes mi princesa, no pasa un día sin pensar en ti, eres mi mundo, mi todo, te necesito.
+
+Eres el amor de mi vida, desde que llegaste a mi vida eres y has sido mi prioridad, mi obsesión, mi down.
+
+Te elegiría a ti antes que a cualquier otra cosa o persona, pq para mi nada es más valioso que mi bebita.
+
+Cada minuto, cada hora, porque ya sin ti mi vida no tiene sentido, sin ese klo KSKSK.
+
+Tú no eres difícil de amar, porque eres la persona más hermosa, dentro y fuera, que he conocido mi tiquita.
+
+Yo te amo y te amaré hasta mi último suspiro, porque mi amor por ti es eterno, y mis cojidas también.
+
+Y yo tendría que estar enojado por lo puta q fuiste, pero te amo mi qlona jijiji`;
+
+  document.getElementById("audio").play();
+});
+</script>
+
+</body>
+  </html>
